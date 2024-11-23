@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("StudyHelperApp")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("StudyHelperApp.Tests")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc711544b29e852d35f934bb451aae3f25ede230")]
-[assembly: System.Reflection.AssemblyProductAttribute("StudyHelperApp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("StudyHelperApp")]
+[assembly: System.Reflection.AssemblyProductAttribute("StudyHelperApp.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("StudyHelperApp.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

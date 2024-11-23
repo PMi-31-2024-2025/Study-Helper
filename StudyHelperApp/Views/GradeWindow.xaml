@@ -1,0 +1,83 @@
+﻿<Window x:Class="StudyHelperApp.Views.GradeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Grades" Height="750" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#F9F9F9">
+
+    <DockPanel Margin="0,0,0,-16">
+        <!-- Enhanced Header -->
+        <DockPanel DockPanel.Dock="Top" Background="#4B0082" Height="70">
+            <!-- App Title -->
+            <TextBlock Text="Study Helper" 
+                       Foreground="White" 
+                       FontSize="28" 
+                       FontWeight="Bold" 
+                       VerticalAlignment="Center" 
+                       Margin="15,0,0,0" 
+                       DockPanel.Dock="Left" />
+
+            <!-- Navigation Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                <Button Content="Home" Click="HomeButton_Click" Width="106" />
+                <Button Content="Notes" Click="NotesButton_Click" Width="101" />
+                <Button Content="To-Do List" Click="ToDoButton_Click" Width="95" />
+                <Button Content="Login" Click="LoginButton_Click" Width="91" />
+                <Button Content="Logout" Click="LogoutButton_Click" Width="97" />
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Main Content -->
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <!-- Section Title -->
+            <TextBlock Text="Your Grades Overview" 
+                       FontSize="24" FontWeight="Bold" Foreground="#4B0082" 
+                       Margin="10,0,0,10" VerticalAlignment="Top" />
+
+            <!-- Grades List -->
+            <Border Grid.Row="1" CornerRadius="10" Background="White" BorderBrush="#4B0082" BorderThickness="2" Padding="10">
+                <ListView Name="GradesListView">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Subject" DisplayMemberBinding="{Binding SubjectName}" Width="200" />
+                            <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Value}" Width="100" />
+                            <GridViewColumn Header="Date" DisplayMemberBinding="{Binding CreatedAt}" Width="200" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+
+            <!-- Average Grades by Subject -->
+            <Border Grid.Row="2" CornerRadius="10" Background="White" BorderBrush="#4B0082" BorderThickness="2" Padding="10" Margin="0,10,0,0">
+                <StackPanel>
+                    <TextBlock Text="Average Grades by Subject" 
+                               FontSize="20" FontWeight="Bold" Foreground="#4B0082" 
+                               Margin="0,0,0,10" />
+
+                    <!-- Wrap the ListView in a ScrollViewer to enable scrolling -->
+                    <ScrollViewer Height="100" VerticalScrollBarVisibility="Auto">
+                        <ListView Name="AverageGradesListView">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Subject" DisplayMemberBinding="{Binding SubjectName}" Width="200" />
+                                    <GridViewColumn Header="Average Grade" DisplayMemberBinding="{Binding AverageGrade}" Width="150" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+
+                    <!-- Bar Chart -->
+                    <StackPanel Margin="25">
+                        <Canvas x:Name="BarChartCanvas" Height="116" Background="#E6E6FA" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

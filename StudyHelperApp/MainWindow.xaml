@@ -1,0 +1,64 @@
+﻿<Window x:Class="StudyHelperApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Study Helper App" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F9F9F9">
+    <DockPanel>
+        <!-- Enhanced Header Section -->
+        <DockPanel DockPanel.Dock="Top" Background="#4B0082" Height="70">
+            <!-- App Title -->
+            <TextBlock Text="Study Helper"
+                       Foreground="White"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       Margin="15,0,0,0"
+                       DockPanel.Dock="Left" />
+
+            <!-- Navigation Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                <Button Content="Home" Click="HomeButton_Click" Height="31" Width="79" />
+                <Button Content="Notes" Click="NotesButton_Click" Width="79" />
+                <Button Content="To-Do List" Click="ToDoButton_Click" Width="79" />
+                <Button Content="Grades" Click="GradesButton_Click" Width="79" />
+                <Button Content="Login" Click="LoginButton_Click" Width="79" />
+                <Button Content="Logout" Click="LogoutButton_Click" Width="79" />
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Main Content Area -->
+        <Grid Margin="20" RenderTransformOrigin="0.505,0.682">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Welcome Title -->
+            <TextBlock Text="Welcome to Study Helper!" 
+                       FontSize="30" 
+                       FontWeight="Bold" 
+                       Foreground="#4B0082" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,20,0,10" />
+
+            <!-- Description Section -->
+            <TextBlock Text="This app helps you manage your studies with tools like Notes, To-Do List, and Grades tracking. Organize your tasks, access grades, and take notes with ease. Log in to get started!" 
+                       FontSize="16" 
+                       TextWrapping="Wrap" 
+                       Foreground="#333" 
+                       HorizontalAlignment="Center" 
+                       TextAlignment="Center"
+                       Margin="0,29,0,162" Grid.Row="2" />
+
+            <!-- Footer Section -->
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,30,0,10">
+                <TextBlock Text="Version 1.0 | © 2024 Study Helper App" 
+                           FontSize="12" 
+                           Foreground="Gray" 
+                           HorizontalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
